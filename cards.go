@@ -1,4 +1,4 @@
-package main
+package cards
 
 import (
 	"fmt"
@@ -75,13 +75,4 @@ func (d *Deck) Deal(players int, cards_per_player int) {
 			d.Hands[j].Cards = append(d.Hands[j].Cards, card)
 		}
 	}
-}
-
-func main() {
-	deck := Create_Deck()
-	fmt.Println(deck)
-	deck.Shuffle()
-	fmt.Println(deck)
-	deck.Deal(2, 3)
-	fmt.Println(deck.Hands)
 }
