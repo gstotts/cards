@@ -1,5 +1,7 @@
 # Cards / Deck Module for Go
 
+### Examples
+
 <details><summary>Create a Deck of Cards</summary>
 
 ```go
