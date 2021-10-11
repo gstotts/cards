@@ -1,9 +1,8 @@
 # Cards / Deck Module for Go
 
-### Examples
+<details><summary>Create a Deck of Cards</summary>
 
-#### Create a Deck
-```golang
+```go
 package main
 
 import (
@@ -17,3 +16,4 @@ func main() {
 	fmt.Println(deck)
 }
 ```
+</details>
