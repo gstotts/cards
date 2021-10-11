@@ -1,3 +1,3 @@
-module github.com/gstotts/go-cards
+module github.com/gstotts/cards
 
 go 1.17
