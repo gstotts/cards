@@ -12,7 +12,7 @@ func TestCreateDeck(t *testing.T) {
 		t.Errorf("Create_Deck() Shuffled: %v, want %v", test_shuffled_value, want_shuffled_value)
 	}
 
-	// Check Hands are Empty
+	// Check Discared is Emtpy
 	test_discarded := testDeck.Discarded
 	if len(test_discarded) != 0 {
 		t.Errorf("Create_Deck() Discarded: %s, want []", test_discarded)
@@ -40,6 +40,23 @@ func TestShuffle(t *testing.T) {
 	}
 	if same != false {
 		t.Errorf("Shuffle() Decks are the same.")
+	}
+}
+
+func TestDeal(t *testing.T) {
+	testDeck := Create_Deck()
+	testDeck.Deal(3, 4)
+
+	want_players := 3
+	if len(testDeck.Hands) != want_players {
+		t.Errorf("Deal() Player Count: got %d, want %d", len(testDeck.Hands), want_players)
+	}
+
+	want_cards_in_hand := 4
+	for _, player := range testDeck.Hands {
+		if len(player.Cards) != want_cards_in_hand {
+			t.Errorf("Deal() Card in Hand Count: got %d, want %d", len(testDeck.Hands), want_players)
+		}
 	}
 
 }
