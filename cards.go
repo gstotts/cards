@@ -7,13 +7,9 @@ import (
 )
 
 type Card struct {
-	Suit  Suit
-	Value string
-}
-
-type Suit struct {
-	Name  string
+	Suit  string
 	Color string
+	Value string
 }
 
 type Deck struct {
@@ -34,17 +30,15 @@ func Create_Deck() Deck {
 
 	var all_cards []Card
 	for _, suit := range []string{"Spades", "Clubs", "Hearts", "Diamonds"} {
-		this_suit := new(Suit)
-		this_suit.Name = suit
-		if suit == "Spades" || suit == "Clubs" {
-			this_suit.Color = "Black"
-		} else {
-			this_suit.Color = "Red"
-		}
 		for _, value := range []string{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"} {
 			this_card := new(Card)
-			this_card.Suit = *this_suit
+			this_card.Suit = suit
 			this_card.Value = value
+			if suit == "Spades" || suit == "Clubs" {
+				this_card.Color = "Black"
+			} else {
+				this_card.Color = "Red"
+			}
 			all_cards = append(all_cards, *this_card)
 		}
 	}
