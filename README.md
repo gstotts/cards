@@ -1,21 +1,3 @@
-# Cards / Deck Module for Go
+# Cards / Deck API Play in Go
 
-### Examples
-
-<details><summary>Create a Deck of Cards</summary>
-
-```go
-package main
-
-import (
-	"fmt"
-
-	"github.com/gstotts/cards"
-)
-
-func main() {
-	deck := cards.Create_Deck()
-	fmt.Println(deck)
-}
-```
-</details>
+Creates a listener on 8080 that can create a deck, shuffle and deal a given deck.  Made just for playing around.
